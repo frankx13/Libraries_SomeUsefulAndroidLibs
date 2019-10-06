@@ -1,0 +1,161 @@
+implementation 'de.hdodenhof:circleimageview:3.0.0'    =    CircleImageView
+
+implementation 'com.squareup.picasso:picasso:2.4.0'    =    Picasso
+
+
+implementation  'com.github.bumptech.glide:compiler:4.9.0'  =    Glide
+implementation 'com.github.bumptech.glide:glide:4.8.0' + annotationProcessorGlide
+
+implementation 'com.android.support:recyclerview-v7:28.0.0'    =    RecyclerView
+
+implementation 'com.google.code.gson:gson:2.8.2'    =    GSON
+
+implementation 'com.squareup.retrofit2:retrofit:2.5.0'    =    Retrofit
+implementation 'com.squareup.retrofit2:converter-gson:2.5.0' = GSON Retrofit
+
+implementation 'com.jakewharton:butterknife:8.8.1'    =    Butterknife
+
+implementation 'com.android.support:cardview-v7:28.0.0'    =    CardView
+
+implementation 'com.squareup.okhttp:okhttp:2.4.0'    =    Okhttp
+
+implementation 'com.squareup.okhttp:okhttp-urlconnection:2.2.0'=Okhtttpurlconnection
+
+****************MAVEN****************
+In Gradle Scripts - build.gradle (Project: [Nom du projet]) -allprojects{
+...
+...
+sous jcenter() on tape maven { : url "https://maven.google.com" }
+****************MAVEN*****************
+
+RETROFIT + GSON + RV + CV :
+implementation 'com.android.support:cardview-v7:28.0.0'
+implementation 'com.squareup.retrofit2:retrofit:2.5.0'
+implementation 'com.squareup.retrofit2:converter-gson:2.5.0'
+implementation 'com.android.support:recyclerview-v7:28.0.0' 
+implementation 'com.android.support:design:28.0.0'    material design stuff
+
+WORKMANAGER
+    def work_version = "1.0.0-rc01"
+    implementation "android.arch.work:work-runtime:$work_version"
+
+TESTING :
+LOCAL UNIT TESTS :
+Required -- JUnit 4 framework
+    testImplementation 'junit:junit:4.12'
+Optional -- Robolectric environment
+    testImplementation 'androidx.test:core:1.0.0'
+Optional -- Mockito framework
+    testImplementation 'org.mockito:mockito-core:1.10.19'
+INTEGRATION UNIT TESTS:
+Optionnal -- Hamcrest framework
+    androidTestImplementation 'org.hamcrest:hamcrest-library:1.1'
+
+FIREBASE UI AUTH:
+    implementation 'com.firebaseui:firebase-ui-auth:3.1.3'
+
+FIREBASE UI FIRESTORE
+    implementation 'com.firebaseui:firebase-ui-firestore:4.3.1'
+
+Firebase UI STORAGE
+    implementation 'com.firebaseui:firebase-ui-storage:3.1.3'
+
+FACEBOOK
+    implementation 'com.facebook.android:facebook-android-sdk:4.41.0'
+
+FIREBASE LIBS: (to be able to use it)
+    classpath 'com.google.gms:google-services:3.1.1' (project gradle config file)
+    implementation "com.google.firebase:firebase-core:11.8.0"(app gradle config file)
+    implementation 'com.google.firebase:firebase-messaging:11.8.0' (cloud messaging)
+
+EASY PERMISSIONS
+    implementation 'pub.devrel:easypermissions:1.1.1'
+
+----------------------------------------------------------------
+CRASHLYTICS
+App level :
+buildscript {
+    
+    repositories {
+        ...
+        maven { url 'https://maven.fabric.io/public' }
+    }
+    
+    dependencies {
+        ...
+        classpath 'io.fabric.tools:gradle:1.25.1'
+    }
+}
+
+allprojects {
+    repositories {
+        ...
+        maven { url 'https://maven.google.com/' }
+    }
+}
+
+Project level :
+apply plugin: 'io.fabric'
+
+dependencies {
+
+    ...
+    
+    //Crashlytic
+    compile('com.crashlytics.sdk.android:crashlytics:2.7.1@aar') {
+        transitive = true
+    }
+}
+----------------------------------------------------------------	
+
+GOOGLE MAPS SERVICES
+  implementation 'com.google.android.gms:play-services-maps:16.0.0'
+
+GOOGLE PLACES
+  implementation 'com.google.android.libraries.places:1.0.0'
+
+CIRCLEIMAGEVIEW
+  implementation 'de.hdodenhof:circleimageview:3.0.0'
+
+    //ROOM
+    implementation 'android.arch.persistence.room:runtime:1.0.0'
+    annotationProcessor "android.arch.persistence.room:compiler:1.0.0"
+    //VIEW MODEL & LIVE DATA
+    implementation "android.arch.lifecycle:extensions:1.1.0"
+
+    // TESTING ARCH COMPONENT
+    androidTestCompile "android.arch.core:core-testing:1.1.0"
+
+ANDROID JUNIT4
+    androidTestImplementation 'com.android.support.test:runner:1.0.2'
+    androidTestImplementation 'com.android.support.test:rules:1.0.2.'
+    androidTestImplementation 'com.android.support.test.uiautomator:uiautomator-v18:2.1.3'
+
+
+ENABLE JAVA 8 :
+
+Gradle (not the project level, but library level) => android :     
+compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+PARCELER
+    //PARCELER
+    implementation 'org.parceler:parceler-api:1.1.12'
+    implementation 'com.google.android.gms:play-services-auth:16.0.1'
+    annotationProcessor 'org.parceler:parceler:1.1.12'
+
+COVERFLOW SLIDER
+implementation 'com.github.moondroid.coverflow:library:1.0'
+
+KENBURNS IMAGEVIEW
+
+DIAGONAL LAYOUT
+
+EVENT BUS
+implementation 'org.greenrobot:eventbus:3.1.1'
+
+RXJAVA2
+  implementation 'io.reactivex.rxjava2:rxjava:2.2.8'
+  implementation 'io.reactivex.rxjava2:rxandroid:2.1.1'
